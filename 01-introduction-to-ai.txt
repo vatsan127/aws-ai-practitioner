@@ -1,0 +1,51 @@
+TOPIC 1: INTRODUCTION TO AI
+============================
+
+WHAT IS AI?
+- AI is a field of computer science that solves problems we normally associate with human intelligence
+- Examples: recognizing images, understanding speech, creating content, learning from data
+
+HOW DOES AI WORK?
+- A Data Scientist collects a Training Dataset (e.g., pictures of fruits)
+- They use an algorithm to train a model
+- The trained AI Model can then take new input (e.g., a photo) and predict what it is (e.g., "Apple")
+
+COMMON AI USE CASES:
+- Speech recognition & generation
+- Medical diagnosis
+- Fraud detection
+- Self-driving cars
+- Code suggestions for developers
+- Translating languages
+- Automating business processes
+- Intelligent Document Processing (uses Computer Vision + NLP)
+
+AI NESTING (IMPORTANT CONCEPT):
+- AI > Machine Learning > Deep Learning > Generative AI
+
+  AI (Artificial Intelligence)
+    - The broadest umbrella — any system that can do tasks that normally need human intelligence
+    - Example: A chatbot answering questions, a system detecting spam emails
+
+  Machine Learning (ML) — subset of AI
+    - Instead of writing exact rules, you feed data and it learns patterns on its own
+    - Example: Show 10,000 emails labeled "spam"/"not spam" -> it classifies new emails by itself
+    - Key idea: It improves with more data
+
+  Deep Learning (DL) — subset of ML
+    - Uses neural networks (inspired by the human brain) with many layers
+    - Can handle complex data like images, audio, video
+    - Example: Recognizing faces in photos, self-driving cars understanding road scenes
+    - Key idea: Needs lots of data and computing power, but solves much harder problems
+
+  Generative AI (GenAI) — subset of DL
+    - Doesn't just analyze or classify — it creates new content
+    - Can generate text, images, code, music, video
+    - Example: ChatGPT writing text, DALL-E creating images from descriptions
+    - Key idea: It produces something new rather than just making predictions
+
+SIMPLE WAY TO REMEMBER:
+  AI    = "machines acting smart"
+  ML    = "machines learning from data"
+  DL    = "machines learning using brain-like networks"
+  GenAI = "machines creating new stuff"
