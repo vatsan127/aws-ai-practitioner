@@ -1,0 +1,258 @@
+TOPIC 2: INTRODUCTION TO AWS & CLOUD COMPUTING
+================================================
+
+HOW WEBSITES WORK
+- A Client (your computer/phone) sends a request over the network to a Server
+- Both client and server have IP addresses (like home addresses for computers)
+- It's just like sending mail — you need an address to send and receive
+
+WHAT IS A SERVER?
+A server is just a computer with these parts:
+- CPU (Compute) — the brain, does the thinking
+- RAM (Memory) — short-term memory for quick access
+- Storage — saves your files/data long-term
+- Database — stores data in an organized/structured way
+- Network — connects everything (routers, switches, DNS)
+
+IT TERMINOLOGY (WITH EXAMPLES):
+
+  Network — Cables, routers, and servers all connected to each other. Like roads connecting buildings.
+    Example: Your home Wi-Fi is a network — it connects your phone, laptop, and smart TV together.
+
+  Router — Directs data to the right destination on the internet. Like a post office.
+    Example: Your home Wi-Fi router sends your Netflix request to Netflix's servers
+    and brings the video back to your TV (not your fridge!).
+
+  Switch — Delivers data to the correct device on a local network. Like a delivery person inside a building.
+    Example: In an office with 50 computers, when a file is sent to "Computer #23",
+    the switch makes sure only Computer #23 gets it, not all 50.
+
+  DNS (Domain Name System) — The phone book of the internet.
+    Example: You type amazon.com -> DNS translates it to 205.251.242.103 -> your browser
+    connects to that IP address. Without DNS, you'd have to memorize numbers for every website!
+
+  How they all work together (ordering food on Swiggy):
+    1. You type swiggy.com -> DNS converts it to an IP address
+    2. Your Router sends the request out to the internet toward Swiggy's servers
+    3. Swiggy's Switch delivers the request to the exact server that handles your order
+    4. The response travels back through the Network to your phone
+
+PROBLEMS WITH TRADITIONAL IT
+- Pay for rent, power, cooling, maintenance for data centers
+- Adding/replacing hardware takes time
+- Scaling is limited
+- Need a 24/7 team to monitor
+- Risk of disasters (earthquake, fire, power outage)
+
+WHAT IS CLOUD COMPUTING?
+- On-demand delivery of compute power, storage, databases, and other IT services
+- Pay-as-you-go — only pay for what you use
+- Get resources almost instantly
+- AWS owns and maintains the hardware, you just use it via the web
+
+  Everyday examples you already use:
+  - Gmail (email cloud service)
+  - Dropbox (cloud storage, built on AWS)
+  - Netflix (video on demand, built on AWS)
+
+CLOUD DEPLOYMENT MODELS
+1. Private Cloud — Used by one organization only, full control, more secure
+2. Public Cloud — Owned by a provider (like AWS), delivered over the internet
+3. Hybrid Cloud — Mix of both, keep sensitive stuff private, rest on public cloud
+
+5 CHARACTERISTICS OF CLOUD COMPUTING
+1. On-demand self service — Get resources without calling anyone
+2. Broad network access — Access from anywhere
+3. Multi-tenancy & resource pooling — Multiple customers share same infrastructure securely
+4. Rapid elasticity & scalability — Scale up/down automatically based on need
+5. Measured service — Pay only for what you use
+
+6 ADVANTAGES OF CLOUD COMPUTING
+
+  1. Trade CAPEX for OPEX
+     - CAPEX (Capital Expense) — Big upfront cost, like buying a server for $10,000
+     - OPEX (Operational Expense) — Small ongoing cost, like paying $100/month to rent a server
+     - Cloud = OPEX — No need to buy hardware, just pay for what you use monthly
+     - Example: Instead of buying a $50,000 server room, you rent servers from AWS
+       and pay only when you use them
+
+  2. Benefit from Massive Economies of Scale
+     - AWS has millions of customers, so they buy hardware in huge bulk -> cheaper prices
+     - Those savings get passed on to you as lower prices
+     - Example: You buying 1 hard drive = $100. AWS buying 1 million = maybe $30 each.
+       You benefit from that $30 price through AWS.
+
+  3. Stop Guessing Capacity
+     - Traditional: You guess how much server power you need. Guess wrong? Waste money or app crashes
+     - Cloud: Scale based on actual usage — no guessing
+     - Example: You expect 1,000 users but get 10,000. AWS automatically handles the extra load.
+       Without cloud, your server would crash.
+
+  4. Increase Speed and Agility
+     - Want a new server? Traditionally takes weeks (order, ship, install, configure)
+     - With AWS? Minutes — click a few buttons and it's ready
+     - Example: A startup wants to test a new app. Instead of waiting weeks for hardware,
+       they launch on AWS in 10 minutes and start testing immediately.
+
+  5. Stop Spending Money Running Data Centers
+     - No more paying for rent, electricity, cooling, security guards, maintenance teams
+     - Focus your time and money on your actual product, not managing servers
+     - Example: Instead of hiring 5 people to manage your server room,
+       let AWS handle it and spend that budget on building your app.
+
+  6. Go Global in Minutes
+     - AWS has data centers all over the world (Regions & Edge Locations)
+     - Deploy your app in multiple countries with a few clicks
+     - Example: Your app is in India. You want users in US and Europe to have fast access too.
+       With AWS, deploy to those regions — done in minutes.
+
+  Simple way to remember all 6:
+    1. Pay less upfront (CAPEX -> OPEX)
+    2. Pay less overall (economies of scale)
+    3. No guessing (scale on demand)
+    4. Move fast (speed & agility)
+    5. No server headaches (no data centers)
+    6. Go worldwide easily (global in minutes)
+
+PROBLEMS SOLVED BY THE CLOUD
+- Flexibility: change resource types when needed
+- Cost-Effectiveness: pay as you go, for what you use
+- Scalability: accommodate larger loads by making hardware stronger or adding nodes
+- Elasticity: ability to scale out and scale-in when needed
+- High-availability and fault-tolerance: build across data centers
+- Agility: rapidly develop, test and launch software applications
+
+TYPES OF CLOUD COMPUTING (IaaS, PaaS, SaaS)
+
+  IaaS (Infrastructure as a Service)
+    - You get the building blocks (servers, storage, networking). Most flexible.
+    - You manage: OS, apps, data
+    - Example: Amazon EC2, Azure, Google Cloud
+
+  PaaS (Platform as a Service)
+    - Infrastructure is managed for you, you focus on your app.
+    - You manage: just your app and data
+    - Example: AWS Elastic Beanstalk, Heroku, Google App Engine
+
+  SaaS (Software as a Service)
+    - Complete product, ready to use. Everything is managed for you.
+    - You manage: nothing, just use it
+    - Example: Gmail, Zoom, Dropbox, AWS Rekognition
+
+AWS PRICING (3 FUNDAMENTALS)
+1. Compute — Pay for compute time
+2. Storage — Pay for data stored
+3. Data transfer OUT — Pay for data leaving (data IN is free)
+
+AWS GLOBAL INFRASTRUCTURE
+
+  1. Regions
+     - A Region is a physical location in the world with a cluster of data centers
+     - Named like: us-east-1 (Virginia, USA), ap-south-1 (Mumbai, India), eu-west-1 (Ireland)
+     - 30+ Regions worldwide
+     - Most AWS services are Region-scoped (data stays in that Region)
+     - Example: Building an app for Indian users? Pick ap-south-1 (Mumbai) -> closer to users -> faster
+
+     How to choose a Region?
+
+       1. Compliance (Data Governance & Legal Requirements)
+          - Some countries have laws that say your data must stay within that country
+          - Data never leaves a Region unless you explicitly move it
+          - Example: A hospital in Germany stores patient records. EU law (GDPR) says
+            data must stay in Europe -> pick eu-central-1 (Frankfurt).
+            Cannot pick us-east-1 because data would leave Europe.
+
+       2. Proximity (Closer = Faster)
+          - Closer server to users = less latency = faster experience
+          - Latency = the delay for data to travel back and forth
+          - Example: Food delivery app for Mumbai users.
+            ap-south-1 (Mumbai) = 20ms. us-east-1 (Virginia) = 200ms — 10x slower!
+
+       3. Available Services
+          - AWS launches new services in some regions first (usually us-east-1)
+          - Check if the service you need is available in your preferred region
+          - Example: Amazon Bedrock might be in us-east-1 and eu-west-1
+            but not yet in ap-south-1. You'd have to pick a region where it's available.
+
+       4. Pricing
+          - Same service can have different prices in different regions
+          - us-east-1 (Virginia) is often the cheapest (oldest & largest region)
+          - Example: EC2 server cost:
+            us-east-1 -> $0.10/hour, ap-south-1 -> $0.12/hour, ap-southeast-1 -> $0.13/hour
+
+       How to actually decide (ask in order):
+         1. "Am I legally required to keep data in a specific country?" -> If yes, that decides it
+         2. "Where are most of my users?" -> Pick the closest Region
+         3. "Does that Region have the services I need?" -> If not, pick next closest
+         4. "Which Region is cheapest among my options?" -> Go with the cheapest
+
+       Real-world example:
+         Building a banking app for Indian customers:
+         Step 1: Indian banking rules say data must stay in India -> must use ap-south-1
+         Step 2: Users are in India -> Mumbai is close
+         Step 3: All services needed are available in Mumbai
+         Step 4: Pricing is fine
+         Decision: ap-south-1 (Mumbai)
+
+  2. Availability Zones (AZs)
+     - Each Region has 3 to 6 AZs
+     - Each AZ = one or more physical data centers with its own power, cooling, networking
+     - AZs are separated from each other so a disaster in one doesn't affect others
+     - Connected with super fast, low-latency networking
+
+     Example: Mumbai region (ap-south-1) has 3 AZs:
+       - ap-south-1a — Data center in one part of Mumbai
+       - ap-south-1b — Data center in another part
+       - ap-south-1c — Data center in yet another part
+     If ap-south-1a has a power outage, your app keeps running on 1b and 1c
+     This gives you high availability and fault tolerance
+
+     Analogy: Like having 3 branches of your bank in different parts of the city.
+     If one branch floods, you can still go to the other two.
+
+  3. Edge Locations (Points of Presence)
+     - 400+ Edge Locations in 90+ cities across 40+ countries
+     - NOT for running your app — for delivering content faster to users
+     - Used by Amazon CloudFront (Content Delivery Network / CDN)
+     - They cache (store copies of) your content closer to the user
+
+     Example:
+       - Your server is in us-east-1 (Virginia, USA)
+       - A user in Chennai visits your site
+       - Without Edge Locations: Request goes all the way to Virginia and back -> slow
+       - With Edge Locations: Copy cached at Chennai Edge Location -> fast!
+
+     Analogy: Like a pizza chain. Main kitchen (Region) is in one city, but delivery hubs
+     (Edge Locations) in every neighbourhood so your pizza arrives hot and fast.
+
+  Quick Summary:
+    Region           = Cluster of data centers in one area (30+ worldwide)
+    Availability Zone = Individual data centers within a Region (3-6 per Region)
+    Edge Location     = Small cache locations worldwide (400+ globally)
+
+  How they nest:
+    AWS Global Infrastructure -> Regions -> Availability Zones -> Data Centers
+    Separately: Edge Locations spread everywhere for speed
+
+AWS GLOBAL vs REGION-SCOPED SERVICES
+  Global Services (work across all Regions):
+    - IAM (Identity and Access Management)
+    - Route 53 (DNS service)
+    - CloudFront (Content Delivery Network)
+    - WAF (Web Application Firewall)
+
+  Region-Scoped Services (tied to a specific Region):
+    - Amazon EC2 (IaaS)
+    - Elastic Beanstalk (PaaS)
+    - Lambda (Function as a Service)
+    - Rekognition (SaaS)
+
+SHARED RESPONSIBILITY MODEL
+- AWS = Security OF the cloud (hardware, infrastructure, physical data centers)
+- Customer (You) = Security IN the cloud (your data, apps, configurations)
+
+AWS ACCEPTABLE USE POLICY
+- No illegal, harmful, or offensive use or content
+- No security violations
+- No network abuse
+- No email or message abuse

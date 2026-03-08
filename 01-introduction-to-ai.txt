@@ -2,12 +2,16 @@ TOPIC 1: INTRODUCTION TO AI
 ============================
 
 WHAT IS AI?
-- AI is a field of computer science that solves problems we normally associate with human intelligence
+- AI (Artificial Intelligence) is the ability of machines/computers to do tasks that normally
+  require human intelligence — like understanding language, recognizing images, making decisions,
+  and learning from experience.
+- Think of it as teaching computers to "think" and solve problems the way humans do, but faster and at scale.
 - Examples: recognizing images, understanding speech, creating content, learning from data
 
 HOW DOES AI WORK?
 - A Data Scientist collects a Training Dataset (e.g., pictures of fruits)
-- They use an algorithm to train a model
+- They use a Classification Algorithm to train a model
+  (Classification = teaching the model to sort things into categories, like "Apple" vs "Orange")
 - The trained AI Model can then take new input (e.g., a photo) and predict what it is (e.g., "Apple")
 
 COMMON AI USE CASES:
@@ -33,10 +37,16 @@ AI NESTING (IMPORTANT CONCEPT):
     - Key idea: It improves with more data
 
   Deep Learning (DL) — subset of ML
-    - Uses neural networks (inspired by the human brain) with many layers
-    - Can handle complex data like images, audio, video
-    - Example: Recognizing faces in photos, self-driving cars understanding road scenes
-    - Key idea: Needs lots of data and computing power, but solves much harder problems
+    - A type of ML that uses layers (like steps) to understand data — from simple to complex
+    - Example: Recognizing a cat in a photo:
+        Layer 1: Detects edges and lines
+        Layer 2: Combines edges into shapes (ears, eyes)
+        Layer 3: Puts shapes together and says "That's a cat!"
+    - Each layer builds on the previous one, going deeper — that's why it's called Deep Learning
+    - Needs a lot of data and computing power
+    - Great for hard stuff like images, voice, and video
+    - You don't need to tell it what to look for — it figures it out on its own
+    - Think of it like a funnel: raw data goes in, and through many layers, a smart answer comes out
 
   Generative AI (GenAI) — subset of DL
     - Doesn't just analyze or classify — it creates new content
@@ -44,8 +54,16 @@ AI NESTING (IMPORTANT CONCEPT):
     - Example: ChatGPT writing text, DALL-E creating images from descriptions
     - Key idea: It produces something new rather than just making predictions
 
+KEY DIFFERENCES BETWEEN ML, DL, AND GENAI:
+  ML    = Predict/Classify
+  DL    = Predict/Classify (harder problems like images, audio, video)
+  GenAI = Predict/Classify + Create new content (text, images, code, music)
+  - GenAI is built on top of DL, which is built on top of ML
+  - So GenAI inherits all their abilities plus adds the power to create
+  - What makes GenAI special is the creation part — the others can't do that
+
 SIMPLE WAY TO REMEMBER:
   AI    = "machines acting smart"
   ML    = "machines learning from data"
   DL    = "machines learning using brain-like networks"
-  GenAI = "machines creating new stuff"
+  GenAI = "machines that can do it all — analyse, predict, AND create new stuff"
