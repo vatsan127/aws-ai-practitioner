@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(PYTHONIOENCODING=utf-8 python -c \"\nfrom pypdf import PdfReader\nreader = PdfReader\\('C:/personalproject/aws-ai-practitioner/course-material/AWS Certified AI Practitioner Slides v17.pdf'\\)\nfor i in range\\(52, 75\\):\n    text = reader.pages[i].extract_text\\(\\)\n    text = text.encode\\('ascii', 'ignore'\\).decode\\('ascii'\\)\n    print\\(f'--- PAGE {i+1} ---'\\)\n    print\\(text\\)\n    print\\(\\)\n\")",
+      "Bash(PYTHONIOENCODING=utf-8 python -c \"\nfrom pypdf import PdfReader\nreader = PdfReader\\('C:/personalproject/aws-ai-practitioner/course-material/AWS Certified AI Practitioner Slides v17.pdf'\\)\nfor i in range\\(75, 105\\):\n    text = reader.pages[i].extract_text\\(\\)\n    text = text.encode\\('ascii', 'ignore'\\).decode\\('ascii'\\)\n    print\\(f'--- PAGE {i+1} ---'\\)\n    print\\(text\\)\n    print\\(\\)\n\")"
     ]
   }
 }

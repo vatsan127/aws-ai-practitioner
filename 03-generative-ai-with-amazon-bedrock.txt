@@ -1,0 +1,205 @@
+TOPIC 3: GENERATIVE AI WITH AMAZON BEDROCK
+============================================
+
+WHAT IS GENERATIVE AI?
+- Generative AI (Gen-AI) is a subset of Deep Learning
+- Used to generate new data that is similar to the data it was trained on
+- Can generate: Text, Image, Audio, Code, Video
+
+FOUNDATION MODEL (FM)
+- A large AI model that is pre-trained on a massive amount of data (text, images, etc.)
+  so it can perform a broad range of general tasks like text generation, summarization,
+  Q&A, image generation, chatbot, and more.
+- Think of it as a base/starting point that you can then customize for your specific needs.
+- Foundation Models are trained on a wide variety of input data
+- The models may cost tens of millions of dollars to train
+- Example: GPT-4o is the foundation model behind ChatGPT
+- Wide selection of Foundation Models from companies: OpenAI, Meta, Amazon, Google, Anthropic
+- Some are open-source (free: Meta Llama, Google BERT) and others under commercial license (OpenAI, Anthropic, etc.)
+
+  Not all Foundation Models are generative:
+  - Non-Generative FM: Only analyzes/understands data (e.g., BERT — classifies, extracts info)
+  - Generative FM: Analyzes + creates new content (e.g., GPT-4, Claude, Stable Diffusion)
+
+LARGE LANGUAGE MODELS (LLM)
+- A type of Foundation Model specifically designed to understand and generate human-like text
+- Called "Large" because it has billions of parameters and is trained on massive text data
+  (books, articles, websites)
+- Can perform: Translation, Summarization, Question answering, Content creation
+- Notable example: GPT-4 (ChatGPT / OpenAI)
+
+FM vs GenAI vs LLM — HOW THEY RELATE:
+
+  Foundation Model (FM) — the big umbrella of all large pre-trained models
+  ├── Generative FMs — FMs that can CREATE new content (GenAI)
+  │   ├── LLM — generates text (GPT-4, Claude, Llama)
+  │   ├── Image Models — generates images (Stable Diffusion)
+  │   └── Multimodal Models — generates text + images + audio (GPT-4o, Amazon Titan)
+  │
+  └── Non-Generative FMs — FMs that only ANALYZE/UNDERSTAND
+      └── BERT — understands text, classifies, extracts info (but can't create)
+
+  - FM = The broad category of all large pre-trained models
+  - GenAI = A capability — FMs that can generate new stuff
+  - LLM = A specific type of FM focused on text only
+
+  Analogy:
+  - FM = Athletes (all types)
+  - Generative FM = Athletes who can create new plays/moves (creative players)
+  - LLM = Athletes who play only cricket (one specific sport, one specific data type — text)
+
+HOW LLMs GENERATE TEXT
+- You give the model a prompt (e.g., "After the rain, the streets were...")
+- The model generates a list of possible next words with probabilities:
+    "wet" -> 40%, "flooded" -> 25%, "slippery" -> 15%, "empty" -> 10%, etc.
+- An algorithm selects a word from that list based on probability (randomly)
+- Then repeats for the next word, and the next...
+- This is non-deterministic — the generated text may be different for every user
+  that uses the same prompt
+
+GENAI FOR IMAGES
+- Text -> Image: Generate images from text prompts
+    (e.g., "Generate a blue sky with white clouds")
+- Image -> Image: Generate images from images
+    (e.g., "Transform this image in Japanese anime style")
+- Image -> Text: Generate text from images
+    (e.g., "Describe how many apples you see in the picture")
+- Uses Diffusion Models (e.g., Stable Diffusion):
+    Training: Forward diffusion — adds noise to a picture until it becomes pure noise
+    Generating: Reverse diffusion — starts from noise and removes it step by step to create a new image
+
+TOKENIZATION
+- Tokenization = converting raw text into a sequence of tokens
+- A token is basically a chunk of text that the model reads
+
+  How is text split into tokens?
+  1. Word-based tokenization — text split into individual words
+     "I love AWS" -> ["I", "love", "AWS"] -> 3 tokens
+  2. Subword tokenization — some words can be split further (helpful for long words)
+     "understanding" -> ["under", "standing"] -> 2 tokens
+
+  Simple Rule of Thumb:
+  - 1 token ~ 4 characters in English (roughly)
+  - 1 token ~ 3/4 of a word
+
+  Each model can have its own tokenization method!
+  - Same sentence can produce different number of tokens in different models
+  - Each company (OpenAI, Anthropic, Meta, AWS) chooses their own strategy
+  - This affects pricing, context window capacity, and performance
+
+CONTEXT WINDOW
+- The number of tokens an LLM can consider when generating text
+- Includes BOTH your input (prompt) AND the output (response)
+- The larger the context window, the more information and coherence
+- Large context windows require more memory and processing power
+- First factor to look at when considering a model
+  Example:
+  - Claude 2.1 = 200K tokens -> can handle very long documents
+  - Llama-2 = 4K tokens -> can only handle short conversations
+
+AMAZON BEDROCK
+- Build Generative AI (Gen-AI) applications on AWS
+- Fully-managed service, no servers for you to manage
+- Keep control of your data used to train the model
+- Pay-per-use pricing model
+- Unified API — same API for all models
+- Leverage a wide array of Foundation Models
+- Out-of-the-box features: RAG, LLM Agents
+- Security, Privacy, Governance and Responsible AI features
+
+AMAZON BEDROCK — FOUNDATION MODELS
+- Access to a wide range of Foundation Models (FM)
+- Amazon Bedrock makes a copy of the FM, available only to you,
+  which you can further fine-tune with your own data
+- None of your data is used to train the FM (your data stays private)
+
+HOW BEDROCK WORKS (FLOW)
+1. Select a Model (e.g., Anthropic Claude)
+2. Ask a question in the Interactive Playground (e.g., "What's the most popular dish in Italy?")
+3. Get a response (e.g., "Pizza & Pasta")
+
+It also connects to:
+- Knowledge Bases (RAG) — fetch data from your own sources for more accurate responses
+- Fine-tuning — update the model with your data (stored in Amazon S3)
+- Unified API — same API for all models, switching models is easy
+
+CHOOSING A BASE FOUNDATION MODEL
+How to choose? Consider:
+- Model type, performance requirements, capabilities, constraints, compliance
+- Level of customization, model size, inference options, licensing agreements, context windows, latency
+- Multimodal models (varied types of input and outputs)
+
+WHAT'S AMAZON TITAN?
+- High-performing Foundation Models from AWS
+- Image, text, multimodal model choices via fully-managed APIs
+- Can be customized with your own data
+- Smaller models are more cost-effective
+
+EXAMPLE COMPARISON:
+  Amazon Titan (Text Express) — 8K tokens, 100+ languages, content creation/classification
+  Llama-2 (70b-chat) — 4K tokens, English, text generation/customer service
+  Claude (2.1) — 200K tokens, multi-language, analysis/forecasting/document comparison
+  Stable Diffusion (SDXL 1.0) — 77 tokens/prompt, image generation for advertising/media
+
+FINE-TUNING A MODEL
+- Adapt a copy of a foundation model with your own data
+- Fine-tuning will change the weights of the base foundation model
+- Training data must:
+    Adhere to a specific format
+    Be stored in Amazon S3
+- Note: not all models can be fine-tuned
+
+SUPERVISED FINE-TUNING
+- Improves the performance of a Model on specific tasks
+- Further trained on a particular field or area of knowledge
+- Uses labeled examples that are input-output pairs
+  Example:
+    {
+      "prompt": "Who is Stephane Maarek?",
+      "completion": "Stephane Maarek is an AWS instructor..."
+    }
+  You give it the question AND the correct answer — so it learns exactly what to say.
+
+REINFORCEMENT FINE-TUNING
+- Improves your FM using feedback-based learning
+- You provide the input data (training data / prompts)
+- You define a Reward Function to evaluate responses and judge which are good
+    Objective tasks -> use AWS Lambda (python code)
+    Subjective tasks -> use another model to judge by providing evaluation instructions
+- Model learns iteratively from reward function output scores, tries to achieve high scores over time
+
+  Example: Technical customer support chatbot
+    Prompt: "My app is running very slowly"
+    Response 1: "Restart the app" -> Score: 5.0 (helpful but superficial)
+    Response 2: "That sounds frustrating. Can you tell me when it started?" -> Score: 9.0 (empathetic, diagnostic)
+    Response 3: "Please open a support ticket" -> Score: 2.0 (not helpful, pushes work to user)
+    The model learns to give responses like Response 2!
+
+SUPERVISED vs REINFORCEMENT FINE-TUNING (KEY DIFFERENCE)
+- Supervised: You provide BOTH input AND output — model learns exact answers
+- Reinforcement: You provide ONLY input — model generates multiple outputs, gets scored, learns from scores
+
+DISTILLATION
+- Making models smaller and faster
+- Up to 75% less expensive than original models
+- Decrease in accuracy, but potentially acceptable
+- Larger (teacher) model transfers knowledge to a smaller (student) model
+- You provide input data (e.g., prompts)
+- Produces a lighter model with similar behavior to the original
+- Focuses on efficiency, speed, and cost reduction
+
+FINE-TUNING: GOOD TO KNOW
+- Re-training an FM requires a higher budget
+- Supervised Fine-Tuning is usually cheaper (less computation, less data needed)
+- Requires experienced ML engineers to perform the task
+- Running a fine-tuned model is also more expensive
+    Option 1: Run the custom model on-demand (price per token)
+    Option 2: Purchase provisioned throughput (billed per month)
+
+FINE-TUNING USE CASES
+- A chatbot with a particular persona or tone, or for a specific purpose
+    (e.g., assisting customers, crafting advertisements)
+- Training with more up-to-date information than what the model previously accessed
+- Training with exclusive data (e.g., your historical emails, customer service records)
+- Targeted use cases (categorization, assessing accuracy)
+
